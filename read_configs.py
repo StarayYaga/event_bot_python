@@ -10,19 +10,19 @@ class ctrl:
             cursor = connect.cursor()
 
             # cursor.execute("""DROP TABLE IF EXISTS data""")
-            cursor.execute('''CREATE TABLE IF NOT EXISTS events(
-                id INTEGER NOT NULL UNIQUE,
-                name TEXT NOT NULL,
-                text TEXT NOT NULL,  
-                date TEXT NOT NULL,
-                PRIMARY KEY(id AUTOINCREMENT)
-            )
+            cursor.execute('''CREATE TABLE "events" (
+                id	INTEGER NOT NULL UNIQUE,
+                name	TEXT NOT NULL,
+                text	TEXT NOT NULL,
+                date	TEXT NOT NULL,
+                PRIMARY KEY("id" AUTOINCREMENT)
+            );
             ''')
             cursor.execute('''
-            CREATE TABLE IF NOT EXISTS admins(
-                id INTEGER INTEGER NOT NULL UNIQUE,
-                id_tg INTEGER,
-                PRIMARY KEY(id AUTOINCREMENT) 
+            CREATE TABLE "admins" (
+                id	INTEGER NOT NULL UNIQUE,
+                id_tg	INTEGER,
+                PRIMARY KEY(id AUTOINCREMENT)
             );
             ''')
 
