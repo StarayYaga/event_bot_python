@@ -10,7 +10,7 @@ class ctrl:
             cursor = connect.cursor()
 
             # cursor.execute("""DROP TABLE IF EXISTS data""")
-            cursor.execute('''CREATE TABLE "events" (
+            cursor.execute('''CREATE TABLE IF NOT EXISTS "events" (
                 id	INTEGER NOT NULL UNIQUE,
                 name	TEXT NOT NULL,
                 text	TEXT NOT NULL,
@@ -19,7 +19,7 @@ class ctrl:
             );
             ''')
             cursor.execute('''
-            CREATE TABLE "admins" (
+            CREATE TABLE IF NOT EXISTS "admins" (
                 id	INTEGER NOT NULL UNIQUE,
                 id_tg	INTEGER,
                 PRIMARY KEY(id AUTOINCREMENT)
